@@ -54,10 +54,12 @@ function checkNumber() {
         //- Guardamos el valor en el localStorage con la clave correspondiente al almacenamiento de fallidos.
         localStorage.setItem('failCounter', failCounter);
         //- Modificamos el HTML interno del objeto que contiene el div del HTML para el texto de resultado y agregamos el contenido que queramos. Por ejemplo "Fallaste".
-        resultItem.innerHTML = 'La próxima vez quizá...';
+        resultItem.innerHTML = `No, el ${inputValue} no era el número. Prueba otra vez.`;
         //- Modificamos el HTML interno del objeto que contiene el div del HTML para el texto de estadísticas para actualizar los valores de éxito y de fallidos.
         statisticsItem.innerHTML = `Éxitos: ${successCounter} - Fallos: ${failCounter}`;
     }
+    // Esto es para resetear el campo cuando el número no es el correcto.
+    document.querySelector('#numeroUsuario').value = '';
 }
 
 //### Función limpiadora de datos
